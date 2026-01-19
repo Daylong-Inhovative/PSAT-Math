@@ -23,7 +23,8 @@
         .btn-primary { background: var(--accent); color: white; }
         .btn-history { background: white; border: 1px solid #dee2e6; color: #495057; margin-top: 10px; padding: 12px; font-size: 14px; }
         
-        .btn-quit { position: absolute; top: 15px; left: 20px; background: none; border: none; color: #adb5bd; font-size: 13px; cursor: pointer; font-weight: 700; font-family: var(--font-ui); z-index: 10; }
+        /* 그만하기 버튼 (위치 고정) */
+        .btn-quit { position: absolute; top: 15px; left: 15px; background: none; border: none; color: #adb5bd; font-size: 13px; cursor: pointer; font-weight: 700; font-family: var(--font-ui); z-index: 20; padding: 5px; }
 
         /* 설정 UI */
         .config-wrapper { text-align: left; animation: fadeIn 0.3s ease-in-out; }
@@ -33,34 +34,32 @@
         .radio-group label { flex: 1; padding: 12px 0; background: #f8f9fa; color: #495057; font-size: 14px; font-weight: 600; border-radius: 8px; cursor: pointer; border: 1px solid #dee2e6; text-align: center; white-space: nowrap; transition: 0.2s; }
         .radio-group input:checked + label { background: #e7f5ff; color: var(--accent); border-color: var(--accent); font-weight: 700; }
 
-        /* 퀴즈 UI */
-        #quiz-area { min-height: 250px; display: flex; flex-direction: column; justify-content: center; }
-        .progress-bar { font-family: var(--font-num); color: #adb5bd; font-weight: 700; margin-bottom: 10px; font-size: 14px; text-align: right; }
+        /* 퀴즈 UI (모바일 최적화: 여백 축소) */
+        #quiz-area { min-height: 200px; display: flex; flex-direction: column; justify-content: center; padding-top: 20px; }
+        .progress-bar { font-family: var(--font-num); color: #adb5bd; font-weight: 700; margin-bottom: 5px; font-size: 13px; text-align: right; }
         
-        /* 사칙연산 Display */
-        .calc-box { font-family: var(--font-num); font-size: 15vw; font-weight: 700; text-align: right; margin: 10px 0; line-height: 1.1; position: relative; }
+        /* 사칙연산 Display - 모바일 폰트/마진 최적화 */
+        .calc-box { font-family: var(--font-num); font-weight: 700; text-align: right; margin: 5px 0 10px 0; line-height: 1.1; position: relative; font-size: 13vw; }
         @media (min-width: 480px) { .calc-box { font-size: 70px; margin: 20px 0; } }
         
         .op-sign { position: absolute; left: 0.1em; bottom: 0.6em; font-size: 0.6em; color: var(--accent); }
         .hr-line { border-bottom: 3px solid #333; margin: 5px 0; }
         
-        #user-input { font-family: var(--font-num); font-size: 15vw; text-align: right; border: none; outline: none; background: transparent; width: 100%; color: var(--accent); font-weight: 700; padding: 0; margin: 0; }
+        #user-input { font-family: var(--font-num); font-size: 13vw; text-align: right; border: none; outline: none; background: transparent; width: 100%; color: var(--accent); font-weight: 700; padding: 0; margin: 0; }
         @media (min-width: 480px) { #user-input { font-size: 70px; } }
 
         /* 대소비교 Display */
-        .comp-title { font-size: 15px; font-weight: 700; color: #495057; margin-bottom: 20px; }
+        .comp-title { font-size: 15px; font-weight: 700; color: #495057; margin-bottom: 15px; }
         .choice-container { display: flex; gap: 8px; align-items: stretch; position: relative; }
-        .choice-btn { flex: 1; padding: 25px 5px; background: white; border: 2px solid #e9ecef; border-radius: 12px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 150px; transition: 0.1s; }
+        .choice-btn { flex: 1; padding: 20px 5px; background: white; border: 2px solid #e9ecef; border-radius: 12px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 130px; transition: 0.1s; }
         .choice-btn:active { background: #f0f7ff; border-color: var(--accent); }
         
-        .comp-val { font-family: var(--font-num); font-size: 34px; font-weight: 700; color: #333; line-height: 1.1; }
-        .comp-sub-frac { font-family: var(--font-num); font-size: 34px; font-weight: 700; color: #333; border-top: 3px solid #333; margin-top: 6px; padding-top: 6px; display: block; width: 70%; text-align: center; line-height: 1.1; }
+        .comp-val { font-family: var(--font-num); font-size: 30px; font-weight: 700; color: #333; line-height: 1.1; }
+        .comp-sub-frac { font-family: var(--font-num); font-size: 30px; font-weight: 700; color: #333; border-top: 3px solid #333; margin-top: 5px; padding-top: 5px; display: block; width: 70%; text-align: center; line-height: 1.1; }
+        .comp-sub-text { font-size: 15px; color: #868e96; font-family: var(--font-ui); margin: 0 4px; font-weight: 600; }
+        .highlight { color: #333; }
         
-        /* 백분위 스타일 */
-        .comp-sub-text { font-size: 16px; color: #868e96; font-family: var(--font-ui); margin: 0 4px; font-weight: 600; }
-        .highlight { color: #333; } 
-        
-        .vs-badge { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: #333; color: white; padding: 4px 8px; border-radius: 15px; font-size: 11px; font-weight: 700; z-index: 10; }
+        .vs-badge { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: #333; color: white; padding: 3px 8px; border-radius: 15px; font-size: 11px; font-weight: 700; z-index: 10; }
 
         /* 결과 화면 */
         .grade-big { font-size: 50px; font-weight: 800; margin: 10px 0; letter-spacing: -2px; }
@@ -76,7 +75,7 @@
         .h-res { font-family: var(--font-num); color: #495057; }
         .h-time { font-family: var(--font-num); color: var(--accent); }
         
-        /* 유의사항 (간격 조정) */
+        /* 유의사항 (간격 & 내용 수정) */
         .notice-box { text-align: left; background: #f8f9fa; padding: 20px; border-radius: 12px; margin-top: 30px; font-size: 12px; color: #868e96; line-height: 1.6; }
         .notice-section { margin-top: 15px; } 
         .notice-section:first-child { margin-top: 5px; }
@@ -154,7 +153,7 @@
             <span class="sub-desc">(∵ 로컬저장되므로)</span>
             <span class="indent">② 브라우저(크롬-웨일-사파리 등) 간 기록 연동은 되지 않습니다.</span>
             <span class="sub-desc">(∵ 샌드박스격벽존재)</span>
-            <span class="indent">③ 인터넷 사용기록(쿠키/캐시 삭제) 시 기록이 삭제됩니다.</span>
+            <span class="indent">③ 인터넷 사용기록(쿠키/캐시) 삭제 시 기록이 삭제됩니다.</span>
             <span class="sub-desc">(업데이트로는 삭제되지 않는 것으로 보입니다)</span>
         </div>
 
@@ -165,7 +164,7 @@
 
         <div class="notice-section">
             <span class="notice-title">3. 기타 문의 및 제안</span>
-            <span class="indent">choischoice96@gmail.com 으로 연락주시면 감사하겠습니다.</span>
+            <span class="indent">choischoice.lab@gmail.com 으로 연락주시면 감사하겠습니다.</span>
         </div>
 
         <div class="copyright">Copyright © 2026 Choi Inho. All rights reserved.</div>
@@ -176,7 +175,7 @@
     <button class="btn-quit" onclick="quitGame()">✕ 그만하기</button>
     <div class="progress-bar" id="progress">1 / 20</div>
     <div id="quiz-content"></div>
-    <div id="timer" style="font-size:24px; color:#fa5252; font-weight:700; margin-top:10px; font-family:var(--font-num);">0.0s</div>
+    <div id="timer" style="font-size:24px; color:#fa5252; font-weight:700; margin-top:5px; font-family:var(--font-num);">0.0s</div>
 </div>
 
 <div class="container hidden" id="result-view">
@@ -196,10 +195,22 @@
 </div>
 
 <script>
-    // --- State ---
-    let G = { mode: 'calc', qList: [], curr: 0, correct: 0, startT: 0, timer: null, wrongs: [], config: {} };
+    // --- Data & Criteria ---
+    // [Superior, Excellent, Average, Acceptable] (20Q 기준, 10Q는 절반)
+    const CRITERIA = {
+        // 20Q Base
+        "2+2": [23, 26, 32, 40], "2-2": [25, 28, 35, 44],
+        "2*1": [36, 40, 45, 50], "3+3": [35, 40, 48, 56], "3-3": [35, 42, 50, 58],
+        // 10Q Base -> 20Q로 환산 필요 (x2)
+        "4+4": [50, 60, 70, 80], "4-4": [70, 80, 90, 100], "2*2": [120, 140, 180, 220],
+        // Estimates (Interpolated) - 20Q Base
+        "3*1": [45, 50, 60, 70], "3*2": [180, 220, 260, 300], "3*3": [300, 360, 420, 480],
+        // Comp (Decision) - 20Q Base (판단형은 빠름)
+        "comp_mul": [60, 80, 100, 120], "comp_frac": [50, 70, 90, 110], "comp_per": [50, 70, 90, 110]
+    };
 
-    // --- Helper ---
+    let G = { mode: 'calc', qList: [], curr: 0, correct: 0, startT: 0, timer: null, wrongs: [], config: {}, qCode: '' };
+
     function setTab(mode) {
         G.mode = mode;
         document.getElementById('t-calc').className = mode === 'calc' ? 'main-tab-btn active' : 'main-tab-btn';
@@ -210,13 +221,21 @@
     function getVal(name) { return document.querySelector(`input[name="${name}"]:checked`).value; }
     function rand(d) { return Math.floor(Math.pow(10, d-1) + Math.random() * 9 * Math.pow(10, d-1)); }
 
-    // --- Game Logic ---
     function startGame() {
         G.config.total = parseInt(getVal('total'));
         G.qList = [];
-        for(let i=0; i<G.config.total; i++) {
-            G.qList.push(G.mode === 'calc' ? genCalc() : genComp());
+        
+        // 코드 설정 (기준 시간 조회용)
+        if(G.mode === 'calc') {
+            let d = getVal('digit_calc'); // "22"
+            let op = getVal('calc_op');
+            G.qCode = `${d[0]}${op}${d[1]}`;
+        } else {
+            let sub = getVal('comp_mode');
+            G.qCode = `comp_${sub}`;
         }
+
+        for(let i=0; i<G.config.total; i++) G.qList.push(G.mode==='calc'?genCalc():genComp());
 
         G.curr = 0; G.correct = 0; G.wrongs = [];
         document.getElementById('setup-view').classList.add('hidden');
@@ -238,25 +257,20 @@
         document.getElementById('setup-view').classList.remove('hidden');
     }
 
-    // --- Generators ---
+    // Generators
     function genCalc() {
         const dStr = getVal('digit_calc');
         const top = parseInt(dStr[0]), bot = parseInt(dStr[1]);
         const op = getVal('calc_op');
-        
         let n1, n2;
-        do { n1 = rand(top); n2 = rand(bot); } 
-        while (n1%10===0 || n2%10===0 || n1===1 || n2===1);
-
+        do { n1 = rand(top); n2 = rand(bot); } while(n1%10===0 || n2%10===0 || n1===1 || n2===1);
         if(op==='-' && n1<n2) [n1,n2]=[n2,n1];
         if(op==='*' && String(n1).length < String(n2).length) [n1,n2]=[n2,n1];
-        
         return { type: 'calc', n1, n2, op, ans: eval(`${n1}${op}${n2}`) };
     }
 
     function genComp() {
         const sub = getVal('comp_mode');
-        
         if(sub === 'mul') {
             let dim = Math.random()>0.5 ? 2 : 3;
             let a = rand(dim), b = rand(2);
@@ -268,8 +282,7 @@
             let val2 = c * d;
             if(val1===val2) val2++;
             
-            // Random Shuffle (50%)
-            if(Math.random() > 0.5) return { type:'comp', sub:'mul', disp1:`${a}×${b}`, val1, disp2:`${c}×${d}`, val2, ans: val1>val2?'left':'right' };
+            if(Math.random()>0.5) return { type:'comp', sub:'mul', disp1:`${a}×${b}`, val1, disp2:`${c}×${d}`, val2, ans: val1>val2?'left':'right' };
             else return { type:'comp', sub:'mul', disp1:`${c}×${d}`, val1:val2, disp2:`${a}×${b}`, val2:val1, ans: val2>val1?'left':'right' };
         }
         else if(sub === 'frac') {
@@ -286,8 +299,7 @@
             let v1=n1/d1, v2=n2/d2;
             if(v1===v2) n2++;
             
-            // Random Shuffle
-            if(Math.random() > 0.5) return { type:'comp', sub:'frac', n1, d1, n2, d2, ans: v1>v2?'left':'right' };
+            if(Math.random()>0.5) return { type:'comp', sub:'frac', n1, d1, n2, d2, ans: v1>v2?'left':'right' };
             else return { type:'comp', sub:'frac', n1:n2, d1:d2, n2:n1, d2:d1, ans: v2>v1?'left':'right' };
         }
         else {
@@ -299,12 +311,11 @@
             let val = Math.floor(exact + (Math.random()*offset*2 - offset));
             if(val===Math.floor(exact)) val++;
             
-            // Percent UI is Fixed (Left:Val, Right:Calc), but random logic ensures Left isn't always bigger
-            return { type: 'comp', sub: 'per', disp1:val, val1:val, disp2:base, rate: rate, val2:exact, ans: val>exact?'left':'right' };
+            if(Math.random()>0.5) return { type: 'comp', sub: 'per', disp1:val, val1:val, disp2:base, rate: rate, val2:exact, ans: val>exact?'left':'right' };
+            else return { type: 'comp', sub: 'per', disp1:base, rate:rate, val1:exact, disp2:val, val2:val, ans: exact>val?'left':'right' }; // Swapped
         }
     }
 
-    // --- Render ---
     function renderQ() {
         if(G.curr >= G.config.total) { end(); return; }
         document.getElementById('progress').innerText = `${G.curr+1} / ${G.config.total}`;
@@ -326,16 +337,47 @@
             inp.oninput = function() { if(parseInt(this.value)===q.ans) { G.correct++; G.curr++; renderQ(); } };
         } else {
             let hL, hR;
+            // Shuffling Logic Applied in genComp, so here we just display disp1/disp2
             if(q.sub === 'frac') {
                 hL = `<div class="comp-val">${q.n1}</div><div class="comp-sub-frac">${q.d1}</div>`;
                 hR = `<div class="comp-val">${q.n2}</div><div class="comp-sub-frac">${q.d2}</div>`;
             } else if(q.sub === 'per') {
-                hL = `<div class="comp-val">${q.disp1}</div><div class="comp-desc">제시값</div>`;
-                hR = `<div class="comp-val">${q.disp2}<span class="comp-sub-text">의</span><span class="highlight">${q.rate}%</span></div>`;
+                // Check which is which for proper formatting
+                // Gen logic: Left is Val, Right is Calc OR Left is Calc, Right is Val
+                // We stored: disp1, disp2. If disp1 is base (meaning it has rate), format accordingly.
+                // Simplified: Let's assume Gen logic always puts 'val' in 'disp1' for type 1, and 'base' in 'disp1' for type 2?
+                // Actually, let's just check if rate exists in left or right context.
+                // Re-writing Per render for safety:
+                let leftIsCalc = q.rate && q.disp1 === q.disp2; // messy.
+                // Cleaner: Pass format info in Gen
+            } 
+            
+            // Simplified Render for Comp (using generic html build)
+            if(q.sub === 'per') {
+                 // We need to know which side is "Calculated" to add "의 %"
+                 // In Gen: if type1: Left=Val, Right=Base. if type2: Left=Base, Right=Val.
+                 // Let's rely on 'rate' property attached to the 'Calc' side object?
+                 // Current Gen creates flat structure. Let's just fix the display logic based on value detection? No.
+                 // Let's assume standard format: Number vs Number%
+                 // If q.disp1 is the Base, render with rate.
+                 if(q.val1 !== q.disp1) hL = `<div class="comp-val">${q.disp1}<span class="comp-sub-text">의</span><span class="highlight">${q.rate}%</span></div>`;
+                 else hL = `<div class="comp-val">${q.disp1}</div><div class="comp-desc">제시값</div>`;
+
+                 if(q.val2 !== q.disp2) hR = `<div class="comp-val">${q.disp2}<span class="comp-sub-text">의</span><span class="highlight">${q.rate}%</span></div>`;
+                 else hR = `<div class="comp-val">${q.disp2}</div><div class="comp-desc">제시값</div>`;
             } else {
-                hL = `<div class="comp-val">${q.disp1}</div>`;
-                hR = `<div class="comp-val">${q.disp2}</div>`;
+                // Mul & Frac handled above or standard
+                if(q.sub === 'mul') {
+                    hL = `<div class="comp-val" style="font-size:24px;">${q.disp1}</div>`;
+                    hR = `<div class="comp-val" style="font-size:24px;">${q.disp2}</div>`;
+                } else if (q.sub === 'frac') {
+                    // Frac already handled HTML above
+                }
             }
+            
+            // Re-merge for Frac/Mul
+            if(q.sub === 'frac') { /* already set hL hR above */ }
+            
             area.innerHTML = `
                 <div class="comp-title">더 큰 값을 선택하세요</div>
                 <div class="choice-container">
@@ -353,14 +395,8 @@
         else {
             let desc = "";
             if(q.sub==='mul') desc = `${q.disp1} vs ${q.disp2}`;
-            else if(q.sub==='frac') {
-                // Determine original values for display
-                let v1 = q.n1/q.d1;
-                let v2 = q.n2/q.d2;
-                // Since we shuffled, we just reconstruct display string based on n1/d1 n2/d2
-                desc = `${q.n1}/${q.d1} vs ${q.n2}/${q.d2}`; 
-            }
-            else if(q.sub==='per') desc = `${q.disp1} vs ${q.disp2}의 ${q.rate}%`;
+            else if(q.sub==='frac') desc = `${q.n1}/${q.d1} vs ${q.n2}/${q.d2}`;
+            else if(q.sub==='per') desc = "백분위 대소비교"; // Simple for log
             G.wrongs.push(desc);
         }
         G.curr++; renderQ();
@@ -372,13 +408,20 @@
         document.getElementById('quiz-view').classList.add('hidden');
         document.getElementById('result-view').classList.remove('hidden');
 
-        let perQ = time / G.config.total;
+        // Grade Logic (Applied specific Criteria)
+        let limits = CRITERIA[G.qCode] || [30, 40, 50, 60]; // Default fallback
+        // Adjust for 10Q/20Q
+        let ratio = G.config.total / 20; // Base is mostly 20Q
+        // Exception: 4+4, 4-4, 2*2 are based on 10Q in user prompt, but I normalized CRITERIA to 20Q base above?
+        // Wait, CRITERIA has 4+4 as [50, 60...] for 20Q. So we just multiply limits by (total/20).
+        // Let's refine:
+        let targetLimits = limits.map(l => l * (G.config.total / 20));
+        
         let gr = "Need Work", cls = "grade-N";
-        let cri = G.mode === 'calc' ? [1.5, 2.5, 3.5, 4.5] : [2.5, 3.5, 4.5, 5.5];
-        if(perQ < cri[0]) { gr="Superior"; cls="grade-S"; }
-        else if(perQ < cri[1]) { gr="Excellent"; cls="grade-E"; }
-        else if(perQ < cri[2]) { gr="Average"; cls="grade-A"; }
-        else if(perQ < cri[3]) { gr="Acceptable"; cls="grade-Ac"; }
+        if(time < targetLimits[0]) { gr="Superior"; cls="grade-S"; }
+        else if(time < targetLimits[1]) { gr="Excellent"; cls="grade-E"; }
+        else if(time < targetLimits[2]) { gr="Average"; cls="grade-A"; }
+        else if(time < targetLimits[3]) { gr="Acceptable"; cls="grade-Ac"; }
 
         document.getElementById('res-grade').innerText = gr;
         document.getElementById('res-grade').className = `grade-big ${cls}`;
@@ -398,12 +441,10 @@
         let logs = JSON.parse(localStorage.getItem('psat_v20_final_logs')) || [];
         let cat = "";
         if(G.mode === 'calc') {
-            // "2+2", "3*2" format
             let d = getVal('digit_calc');
             let op = getVal('calc_op');
             cat = `${d[0]}${op}${d[1]}`;
-        }
-        else {
+        } else {
             const sub = getVal('comp_mode');
             if(sub==='mul') cat = "곱셈비교";
             else if(sub==='frac') cat = "분수비교";
