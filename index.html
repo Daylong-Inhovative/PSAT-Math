@@ -3,6 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYP5SC0M42"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-BYP5SC0M42');
+    </script>
+
     <title>PSAT Math 2.0</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
@@ -23,7 +33,6 @@
         .btn-primary { background: var(--accent); color: white; }
         .btn-history { background: white; border: 1px solid #dee2e6; color: #495057; margin-top: 10px; padding: 12px; font-size: 14px; }
         
-        /* 그만하기 버튼 (위치 고정) */
         .btn-quit { position: absolute; top: 15px; left: 15px; background: none; border: none; color: #adb5bd; font-size: 13px; cursor: pointer; font-weight: 700; font-family: var(--font-ui); z-index: 20; padding: 5px; }
 
         /* 설정 UI */
@@ -34,11 +43,11 @@
         .radio-group label { flex: 1; padding: 12px 0; background: #f8f9fa; color: #495057; font-size: 14px; font-weight: 600; border-radius: 8px; cursor: pointer; border: 1px solid #dee2e6; text-align: center; white-space: nowrap; transition: 0.2s; }
         .radio-group input:checked + label { background: #e7f5ff; color: var(--accent); border-color: var(--accent); font-weight: 700; }
 
-        /* 퀴즈 UI (모바일 최적화: 여백 축소) */
+        /* 퀴즈 UI (모바일 최적화) */
         #quiz-area { min-height: 200px; display: flex; flex-direction: column; justify-content: center; padding-top: 20px; }
         .progress-bar { font-family: var(--font-num); color: #adb5bd; font-weight: 700; margin-bottom: 5px; font-size: 13px; text-align: right; }
         
-        /* 사칙연산 Display - 모바일 폰트/마진 최적화 */
+        /* 사칙연산 Display */
         .calc-box { font-family: var(--font-num); font-weight: 700; text-align: right; margin: 5px 0 10px 0; line-height: 1.1; position: relative; font-size: 13vw; }
         @media (min-width: 480px) { .calc-box { font-size: 70px; margin: 20px 0; } }
         
@@ -54,12 +63,12 @@
         .choice-btn { flex: 1; padding: 20px 5px; background: white; border: 2px solid #e9ecef; border-radius: 12px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 130px; transition: 0.1s; }
         .choice-btn:active { background: #f0f7ff; border-color: var(--accent); }
         
-        .comp-val { font-family: var(--font-num); font-size: 30px; font-weight: 700; color: #333; line-height: 1.1; }
-        .comp-sub-frac { font-family: var(--font-num); font-size: 30px; font-weight: 700; color: #333; border-top: 3px solid #333; margin-top: 5px; padding-top: 5px; display: block; width: 70%; text-align: center; line-height: 1.1; }
-        .comp-sub-text { font-size: 15px; color: #868e96; font-family: var(--font-ui); margin: 0 4px; font-weight: 600; }
+        .comp-val { font-family: var(--font-num); font-size: 34px; font-weight: 700; color: #333; line-height: 1.1; }
+        .comp-sub-frac { font-family: var(--font-num); font-size: 34px; font-weight: 700; color: #333; border-top: 3px solid #333; margin-top: 6px; padding-top: 6px; display: block; width: 70%; text-align: center; line-height: 1.1; }
+        .comp-sub-text { font-size: 16px; color: #868e96; font-family: var(--font-ui); margin: 0 4px; font-weight: 600; }
         .highlight { color: #333; }
         
-        .vs-badge { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: #333; color: white; padding: 3px 8px; border-radius: 15px; font-size: 11px; font-weight: 700; z-index: 10; }
+        .vs-badge { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: #333; color: white; padding: 4px 8px; border-radius: 15px; font-size: 11px; font-weight: 700; z-index: 10; }
 
         /* 결과 화면 */
         .grade-big { font-size: 50px; font-weight: 800; margin: 10px 0; letter-spacing: -2px; }
@@ -75,7 +84,7 @@
         .h-res { font-family: var(--font-num); color: #495057; }
         .h-time { font-family: var(--font-num); color: var(--accent); }
         
-        /* 유의사항 (간격 & 내용 수정) */
+        /* 유의사항 */
         .notice-box { text-align: left; background: #f8f9fa; padding: 20px; border-radius: 12px; margin-top: 30px; font-size: 12px; color: #868e96; line-height: 1.6; }
         .notice-section { margin-top: 15px; } 
         .notice-section:first-child { margin-top: 5px; }
@@ -163,7 +172,15 @@
         </div>
 
         <div class="notice-section">
-            <span class="notice-title">3. 기타 문의 및 제안</span>
+            <span class="notice-title">3. 보안 관련</span>
+            <span class="indent">① 서비스 개선을 위해 개인을 식별할 수 없는 익명의 접속 통계(Google Analytics)를 수집하고 있습니다.</span>
+            <span class="indent">② 해당 Google Analytics로는 접속자 수, 머무는 시간 정도만 확인할 수 있습니다.</span>
+            <span class="indent">③ 개인 기록은 소유자의 기기 이외의 곳에 절대 저장되지 않습니다.</span>
+            <span class="sub-desc">(∵ 서버가 따로 없기 때문)</span>
+        </div>
+
+        <div class="notice-section">
+            <span class="notice-title">4. 기타 문의 및 제안</span>
             <span class="indent">choischoice.lab@gmail.com 으로 연락주시면 감사하겠습니다.</span>
         </div>
 
@@ -175,7 +192,7 @@
     <button class="btn-quit" onclick="quitGame()">✕ 그만하기</button>
     <div class="progress-bar" id="progress">1 / 20</div>
     <div id="quiz-content"></div>
-    <div id="timer" style="font-size:24px; color:#fa5252; font-weight:700; margin-top:5px; font-family:var(--font-num);">0.0s</div>
+    <div id="timer" style="font-size:24px; color:#fa5252; font-weight:700; margin-top:10px; font-family:var(--font-num);">0.0s</div>
 </div>
 
 <div class="container hidden" id="result-view">
@@ -196,17 +213,12 @@
 
 <script>
     // --- Data & Criteria ---
-    // [Superior, Excellent, Average, Acceptable] (20Q 기준, 10Q는 절반)
     const CRITERIA = {
-        // 20Q Base
         "2+2": [23, 26, 32, 40], "2-2": [25, 28, 35, 44],
         "2*1": [36, 40, 45, 50], "3+3": [35, 40, 48, 56], "3-3": [35, 42, 50, 58],
-        // 10Q Base -> 20Q로 환산 필요 (x2)
         "4+4": [50, 60, 70, 80], "4-4": [70, 80, 90, 100], "2*2": [120, 140, 180, 220],
-        // Estimates (Interpolated) - 20Q Base
         "3*1": [45, 50, 60, 70], "3*2": [180, 220, 260, 300], "3*3": [300, 360, 420, 480],
-        // Comp (Decision) - 20Q Base (판단형은 빠름)
-        "comp_mul": [60, 80, 100, 120], "comp_frac": [50, 70, 90, 110], "comp_per": [50, 70, 90, 110]
+        comp_mul: [60, 80, 100, 120], comp_frac: [50, 70, 90, 110], comp_per: [50, 70, 90, 110]
     };
 
     let G = { mode: 'calc', qList: [], curr: 0, correct: 0, startT: 0, timer: null, wrongs: [], config: {}, qCode: '' };
@@ -225,9 +237,8 @@
         G.config.total = parseInt(getVal('total'));
         G.qList = [];
         
-        // 코드 설정 (기준 시간 조회용)
         if(G.mode === 'calc') {
-            let d = getVal('digit_calc'); // "22"
+            let d = getVal('digit_calc');
             let op = getVal('calc_op');
             G.qCode = `${d[0]}${op}${d[1]}`;
         } else {
@@ -257,7 +268,6 @@
         document.getElementById('setup-view').classList.remove('hidden');
     }
 
-    // Generators
     function genCalc() {
         const dStr = getVal('digit_calc');
         const top = parseInt(dStr[0]), bot = parseInt(dStr[1]);
@@ -312,7 +322,7 @@
             if(val===Math.floor(exact)) val++;
             
             if(Math.random()>0.5) return { type: 'comp', sub: 'per', disp1:val, val1:val, disp2:base, rate: rate, val2:exact, ans: val>exact?'left':'right' };
-            else return { type: 'comp', sub: 'per', disp1:base, rate:rate, val1:exact, disp2:val, val2:val, ans: exact>val?'left':'right' }; // Swapped
+            else return { type: 'comp', sub: 'per', disp1:base, rate:rate, val1:exact, disp2:val, val2:val, ans: exact>val?'left':'right' };
         }
     }
 
@@ -337,47 +347,19 @@
             inp.oninput = function() { if(parseInt(this.value)===q.ans) { G.correct++; G.curr++; renderQ(); } };
         } else {
             let hL, hR;
-            // Shuffling Logic Applied in genComp, so here we just display disp1/disp2
             if(q.sub === 'frac') {
                 hL = `<div class="comp-val">${q.n1}</div><div class="comp-sub-frac">${q.d1}</div>`;
                 hR = `<div class="comp-val">${q.n2}</div><div class="comp-sub-frac">${q.d2}</div>`;
             } else if(q.sub === 'per') {
-                // Check which is which for proper formatting
-                // Gen logic: Left is Val, Right is Calc OR Left is Calc, Right is Val
-                // We stored: disp1, disp2. If disp1 is base (meaning it has rate), format accordingly.
-                // Simplified: Let's assume Gen logic always puts 'val' in 'disp1' for type 1, and 'base' in 'disp1' for type 2?
-                // Actually, let's just check if rate exists in left or right context.
-                // Re-writing Per render for safety:
-                let leftIsCalc = q.rate && q.disp1 === q.disp2; // messy.
-                // Cleaner: Pass format info in Gen
-            } 
-            
-            // Simplified Render for Comp (using generic html build)
-            if(q.sub === 'per') {
-                 // We need to know which side is "Calculated" to add "의 %"
-                 // In Gen: if type1: Left=Val, Right=Base. if type2: Left=Base, Right=Val.
-                 // Let's rely on 'rate' property attached to the 'Calc' side object?
-                 // Current Gen creates flat structure. Let's just fix the display logic based on value detection? No.
-                 // Let's assume standard format: Number vs Number%
-                 // If q.disp1 is the Base, render with rate.
-                 if(q.val1 !== q.disp1) hL = `<div class="comp-val">${q.disp1}<span class="comp-sub-text">의</span><span class="highlight">${q.rate}%</span></div>`;
-                 else hL = `<div class="comp-val">${q.disp1}</div><div class="comp-desc">제시값</div>`;
+                if(q.val1 !== q.disp1) hL = `<div class="comp-val">${q.disp1}<span class="comp-sub-text">의</span><span class="highlight">${q.rate}%</span></div>`;
+                else hL = `<div class="comp-val">${q.disp1}</div><div class="comp-desc">제시값</div>`;
 
-                 if(q.val2 !== q.disp2) hR = `<div class="comp-val">${q.disp2}<span class="comp-sub-text">의</span><span class="highlight">${q.rate}%</span></div>`;
-                 else hR = `<div class="comp-val">${q.disp2}</div><div class="comp-desc">제시값</div>`;
+                if(q.val2 !== q.disp2) hR = `<div class="comp-val">${q.disp2}<span class="comp-sub-text">의</span><span class="highlight">${q.rate}%</span></div>`;
+                else hR = `<div class="comp-val">${q.disp2}</div><div class="comp-desc">제시값</div>`;
             } else {
-                // Mul & Frac handled above or standard
-                if(q.sub === 'mul') {
-                    hL = `<div class="comp-val" style="font-size:24px;">${q.disp1}</div>`;
-                    hR = `<div class="comp-val" style="font-size:24px;">${q.disp2}</div>`;
-                } else if (q.sub === 'frac') {
-                    // Frac already handled HTML above
-                }
+                hL = `<div class="comp-val">${q.disp1}</div>`;
+                hR = `<div class="comp-val">${q.disp2}</div>`;
             }
-            
-            // Re-merge for Frac/Mul
-            if(q.sub === 'frac') { /* already set hL hR above */ }
-            
             area.innerHTML = `
                 <div class="comp-title">더 큰 값을 선택하세요</div>
                 <div class="choice-container">
@@ -396,7 +378,7 @@
             let desc = "";
             if(q.sub==='mul') desc = `${q.disp1} vs ${q.disp2}`;
             else if(q.sub==='frac') desc = `${q.n1}/${q.d1} vs ${q.n2}/${q.d2}`;
-            else if(q.sub==='per') desc = "백분위 대소비교"; // Simple for log
+            else if(q.sub==='per') desc = `${q.disp1} vs ${q.disp2}의 ${q.rate}%`;
             G.wrongs.push(desc);
         }
         G.curr++; renderQ();
@@ -408,13 +390,7 @@
         document.getElementById('quiz-view').classList.add('hidden');
         document.getElementById('result-view').classList.remove('hidden');
 
-        // Grade Logic (Applied specific Criteria)
-        let limits = CRITERIA[G.qCode] || [30, 40, 50, 60]; // Default fallback
-        // Adjust for 10Q/20Q
-        let ratio = G.config.total / 20; // Base is mostly 20Q
-        // Exception: 4+4, 4-4, 2*2 are based on 10Q in user prompt, but I normalized CRITERIA to 20Q base above?
-        // Wait, CRITERIA has 4+4 as [50, 60...] for 20Q. So we just multiply limits by (total/20).
-        // Let's refine:
+        let limits = CRITERIA[G.qCode] || [30, 40, 50, 60];
         let targetLimits = limits.map(l => l * (G.config.total / 20));
         
         let gr = "Need Work", cls = "grade-N";
